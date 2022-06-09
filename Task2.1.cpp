@@ -26,7 +26,7 @@ int main() {
 	std::for_each(str_arr.begin(), str_arr.end(), [](const std::basic_string<char> line) {std::cout << line; });
 
 	std::cout << std::endl << std::endl << "The longest sentence:" << std::endl << std::endl;
-	std::cout << *std::max_element(str_arr.begin(), str_arr.end());
+	std::cout << (*std::max_element(str_arr.begin(), str_arr.end(), [](const std::basic_string<char>& a, const std::basic_string<char>& b) { return a.length() < b.length();})).length() - 2;
 
 	return 0;
 }
